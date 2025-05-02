@@ -89,7 +89,7 @@ void Maze::checkEntranceExit(const int Y, const int X)
     }
 }
 
-void Maze::generaeEntranceExit()
+void Maze::generateEntranceExit()
 {
     if (mSolveOrientation == 0)
     {
@@ -184,17 +184,21 @@ Maze::Maze(const int Y, const int X) : mY(Y), mX(X), mGrid(Y * X)
 {
     mSolveOrientation = rand() % 2;
 
-    generaeEntranceExit();
+    generateEntranceExit();
 
-    for (int i; mEntrance == mExit; i++)
+    /**
+     * Ask if this is acceptable
+     **/
+    for (int i = 0; mEntrance == mExit; i++)
     {
-        generaeEntranceExit();
-
-        if (i == 5)
+        if (i % 2)
         {
-            (mSolveOrientation == 0) ? mSolveOrientation == 1 : mSolveOrientation == 0;
+            (mSolveOrientation == 0) ? mSolveOrientation = 1 : mSolveOrientation = 0;
         }
+
+        generateEntranceExit();
     }
+    //
 
     executeRandomDFS();
     saveMaze();

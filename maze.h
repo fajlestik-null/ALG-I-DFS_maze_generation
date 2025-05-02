@@ -44,7 +44,7 @@ private:
 
     void checkEntranceExit(const int Y, const int X);
 
-    void generaeEntranceExit();
+    void generateEntranceExit();
 
     void executeRandomDFS();
 
