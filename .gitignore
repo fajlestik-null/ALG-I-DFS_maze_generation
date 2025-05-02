@@ -1,0 +1,25 @@
+# CMake build directory
+/build/
+/build-*/
+
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executables and output
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.app
+
+# IDE and OS-specific files
+*.swp
+*.swo
+*.log
+*.DS_Store
+*.vscode/
+*.idea/
