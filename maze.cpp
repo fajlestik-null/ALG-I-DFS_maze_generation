@@ -143,10 +143,11 @@ void Maze::executeRandomDFS()
 
 void Maze::saveMaze()
 {
-    int indent = 20;
+    const int INDENT = 20;
+    const int CELL_SIZE = 20;
 
     ofstream file("maze.svg");
-    file << "<svg xmlns = 'http://www.w3.org/2000/svg' width = '" << mX * 20 + 2 * indent << "' height = '" << mY * 20 + 2 * indent << "'>\n";
+    file << "<svg xmlns = 'http://www.w3.org/2000/svg' width = '" << mX * CELL_SIZE + 2 * INDENT << "' height = '" << mY * CELL_SIZE + 2 * INDENT << "'>\n";
     file << "<rect width='100%' height='100%' fill='white'/>\n";
     file << "<g stroke='black' stroke-width='2'>\n";
 
@@ -154,24 +155,24 @@ void Maze::saveMaze()
     {
         for (int x = 0; x < mX; x++)
         {
-            int coordinateY = y * 20 + indent;
-            int coordinateX = x * 20 + indent;
+            int coordinateY = y * CELL_SIZE + INDENT;
+            int coordinateX = x * CELL_SIZE + INDENT;
 
             if (accessGrid(y, x).mWalls[TOP])
             {
-                file << "<line x1='" << coordinateX << "' y1='" << coordinateY << "' x2='" << coordinateX + 20 << "' y2='" << coordinateY << "' />\n";
+                file << "<line x1='" << coordinateX << "' y1='" << coordinateY << "' x2='" << coordinateX + CELL_SIZE << "' y2='" << coordinateY << "' />\n";
             }
             if (accessGrid(y, x).mWalls[RIGHT])
             {
-                file << "<line x1='" << coordinateX + 20 << "' y1='" << coordinateY << "' x2='" << coordinateX + 20 << "' y2='" << coordinateY + 20 << "' />\n";
+                file << "<line x1='" << coordinateX + CELL_SIZE << "' y1='" << coordinateY << "' x2='" << coordinateX + CELL_SIZE << "' y2='" << coordinateY + CELL_SIZE << "' />\n";
             }
             if (accessGrid(y, x).mWalls[BOTTOM])
             {
-                file << "<line x1='" << coordinateX << "' y1='" << coordinateY + 20 << "' x2='" << coordinateX + 20 << "' y2='" << coordinateY + 20 << "' />\n";
+                file << "<line x1='" << coordinateX << "' y1='" << coordinateY + CELL_SIZE << "' x2='" << coordinateX + CELL_SIZE << "' y2='" << coordinateY + CELL_SIZE << "' />\n";
             }
             if (accessGrid(y, x).mWalls[LEFT])
             {
-                file << "<line x1='" << coordinateX << "' y1='" << coordinateY << "' x2='" << coordinateX << "' y2='" << coordinateY + 20 << "' />\n";
+                file << "<line x1='" << coordinateX << "' y1='" << coordinateY << "' x2='" << coordinateX << "' y2='" << coordinateY + CELL_SIZE << "' />\n";
             }
         }
     }
