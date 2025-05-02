@@ -1,3 +1,0 @@
-/home/fila/alg-i/project_tmp/ALG-I-DFS_maze_generation/build/CMakeFiles/maze.dir
-/home/fila/alg-i/project_tmp/ALG-I-DFS_maze_generation/build/CMakeFiles/edit_cache.dir
-/home/fila/alg-i/project_tmp/ALG-I-DFS_maze_generation/build/CMakeFiles/rebuild_cache.dir
