@@ -105,6 +105,7 @@ void Maze::generateEntranceExit()
 
 void Maze::executeRandomDFS()
 {
+    mNeighbours.reserve(4);
     stack<pair<int, int>> backTrack;
     backTrack.push({0, 0});
     accessGrid(0, 0).mVisited = true;
@@ -201,6 +202,10 @@ Maze::Maze(const int Y, const int X) : mY(Y), mX(X), mGrid(Y * X)
     }
     //
 
+    // time_t start = time(nullptr);
     executeRandomDFS();
+    // time_t end = time(nullptr);
+
+    // cout << "Time: " << end - start << endl;
     saveMaze();
 }
