@@ -65,7 +65,7 @@ void Maze::removeWall(const int CURRENT_Y, const int CURRENT_X, const int NEXT_Y
 
 void Maze::checkEntranceExit(const int Y, const int X)
 {
-    if (mSolveOrientation == 0)
+    if (mSolveOrientation)
     {
         if (mEntrance == X && Y == 0)
         {
@@ -91,7 +91,7 @@ void Maze::checkEntranceExit(const int Y, const int X)
 
 void Maze::generateEntranceExit()
 {
-    if (mSolveOrientation == 0)
+    if (mSolveOrientation)
     {
         mEntrance = rand() % mX;
         mExit = rand() % mX;
@@ -184,28 +184,29 @@ void Maze::saveMaze()
 
 Maze::Maze(const int Y, const int X) : mY(Y), mX(X), mGrid(Y * X)
 {
-    mSolveOrientation = rand() % 2;
+    mSolveOrientation = (rand() % 2) ? true : false;
 
     generateEntranceExit();
 
-    /**
-     * Ask if this is acceptable
-     **/
     for (int i = 0; mEntrance == mExit; i++)
     {
         if (i % 2)
         {
-            (mSolveOrientation == 0) ? mSolveOrientation = 1 : mSolveOrientation = 0;
+            mSolveOrientation = !mSolveOrientation;
         }
 
         generateEntranceExit();
     }
-    //
 
-    // time_t start = time(nullptr);
+    time_t start = time(nullptr);
     executeRandomDFS();
-    // time_t end = time(nullptr);
+    time_t end = time(nullptr);
 
-    // cout << "Time: " << end - start << endl;
+    cout << "Time: " << end - start << endl;
+
+    start = time(nullptr);
     saveMaze();
+    end = time(nullptr);
+
+    cout << "Time: " << end - start << endl;
 }

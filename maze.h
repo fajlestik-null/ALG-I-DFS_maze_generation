@@ -7,7 +7,7 @@
 #include <stack>
 #include <random>
 
-// #include <ctime>
+#include <ctime>
 
 using namespace std;
 
@@ -16,9 +16,10 @@ class Maze
 private:
     int mX,
         mY,
-        mSolveOrientation,
         mEntrance,
         mExit;
+
+    bool mSolveOrientation;
 
     typedef struct
     {
