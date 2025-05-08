@@ -49,10 +49,10 @@ private:
      */
     enum Direction
     {
-        TOP = 0,
-        RIGHT = 1,
-        BOTTOM = 2,
-        LEFT = 3
+        TOP = 0,    ///< top-sided wall of the cell (0th in the mWalls)
+        RIGHT = 1,  ///< right-sided wall of the cell (1st in the mWalls)
+        BOTTOM = 2, ///< bottom-sided wall of the cell (2nd in the mWalls)
+        LEFT = 3    ///< left-sided wall of the cell (3rd in the mWalls)
     };
 
     vector<Cell> mGrid;                 ///< Flattened 2D grid of maze cells (flattened as a result of optimalizations)
