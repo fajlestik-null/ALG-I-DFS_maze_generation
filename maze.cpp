@@ -1,3 +1,8 @@
+/**
+ * @file maze.cpp
+ * @brief Maze class implementation.
+ */
+
 #include "maze.h"
 
 Maze::Cell &Maze::accessGrid(const int Y, const int X)

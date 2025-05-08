@@ -1,3 +1,7 @@
+/**
+ * @file input.cpp
+ * @brief Input class implementation.
+ */
 #include "input.h"
 
 void Input::assignValue(int &rVar, const int VALUE)
@@ -21,7 +25,7 @@ bool Input::isInt(const string STRING)
 void Input::printExitMessage()
 {
     cout << "<------------------------------------------------------------------------------>" << endl;
-    cout << "Please insert right parameters: rows(int > 1) cols(int > 1) [optional] seed(int)" << endl;
+    cout << "Please insert right parameters: (rows(int > 1) || cols(int > 1)) [optional] seed(int)" << endl;
     cout << "                       Example: ./executable_name 10 10 5                       " << endl;
     cout << "<------------------------------------------------------------------------------>" << endl;
     exit(-1);
