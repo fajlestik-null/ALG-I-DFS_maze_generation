@@ -20,8 +20,8 @@ using namespace std;
  * so they can never be place exactly opposite each other.
  *
  * @note This class was influence/inspired by following sources:
- * [1]  Iterative Depth First Traversal of Graph. (2015, October 23). GeeksforGeeks. https://www.geeksforgeeks.org/iterative-depth-first-traversal/
- * [2]  Drum, K. L. (2023). Let’s build a maze in SVG. Kld.dev. https://kld.dev/svg-maze‌
+ *  - [1]  Iterative Depth First Traversal of Graph. (2015, October 23). GeeksforGeeks. https://www.geeksforgeeks.org/iterative-depth-first-traversal/
+ *  - [2]  Drum, K. L. (2023). Let’s build a maze in SVG. Kld.dev. https://kld.dev/svg-maze‌
  */
 class Maze
 {
