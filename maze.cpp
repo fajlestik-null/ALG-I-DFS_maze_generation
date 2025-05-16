@@ -207,11 +207,11 @@ Maze::Maze(const int Y, const int X) : mY(Y), mX(X), mGrid(Y * X)
     executeRandomDFS();
     time_t end = time(nullptr);
 
-    cout << "Time: " << end - start << endl;
+    cout << "DFS time: " << end - start << endl;
 
     start = time(nullptr);
     saveMaze();
     end = time(nullptr);
 
-    cout << "Time: " << end - start << endl;
+    cout << "SVG time: " << end - start << endl;
 }
